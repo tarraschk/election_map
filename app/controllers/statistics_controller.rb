@@ -18,4 +18,8 @@ class StatisticsController < ApplicationController
     )
   end
 
+  def geometry_for_region
+    params.require(:code_reg)
+    render json: BureauDeVote.where(code_reg: params[:code_reg]).pluck(:bureau, :geometry)
+  end
 end
