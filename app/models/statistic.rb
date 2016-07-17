@@ -1,5 +1,8 @@
 class Statistic
   def self.find_evolution(code_reg, first_election_id, second_election_id, first_political_current, second_political_current)
+    all_current = ["Extrême gauche", "Ecologiste", "Gauche", "Droite", "Centre", "Extrême Gauche", "Extrême Droite"]
+    first_political_current         = all_current.select{|current| first_political_current.match( current)}
+    second_political_current        = all_current.select{|current| second_political_current.match(current)}
     first_election_candidates       = Candidate.where(political_current: first_political_current,   election_id: first_election_id).pluck(:id)
     first_election_candidates_bis   = Candidate.where(political_current: second_political_current,  election_id: first_election_id).pluck(:id)
     first_election_results          = Hash[BureauDeVote.where(code_reg: code_reg).joins(:results).merge(Result.where(candidate_id: first_election_candidates      )).group(:bureau).pluck(:bureau, 'sum(result)')]
