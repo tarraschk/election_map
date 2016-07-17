@@ -56,6 +56,8 @@ Rails.application.routes.draw do
 
   namespace :statistics do
     get :test_stats
+    get :evolution
+
   end
 
 end
