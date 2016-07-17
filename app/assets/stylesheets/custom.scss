@@ -1,0 +1,23 @@
+/* Thème Alain Juppé */
+/* Bleu foncé 002855, Rouge E4002B */
+$brand-primary: lighten(#002855, 10%) !default;
+$bleu-juppe: #002855;
+$rouge-juppe: #e4002b;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+html,
+body {
+  height: 100%;
+  color: black;
+  /* The html and body elements cannot have any padding or margin. */
+  font-family: Arial, "Lucida Grande", sans-serif;
+}
+
+#map {
+  height: 750px;
+  width: 100%;
+  min-width:100%;
+  min-height:750px;
+}

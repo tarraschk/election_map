@@ -32,6 +32,7 @@ gem 'puma'
 gem 'rgeo-shapefile'
 gem 'rgeo-geojson'
 
+gem 'bootstrap-sass', '~> 3.3.6'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
